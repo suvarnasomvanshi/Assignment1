@@ -58,9 +58,10 @@ useEffect(()=>{
   };
 
   return (
-    <div className="container mt-5">
+    <div className="d-flex justify-content-center align-items-center" style={{maxWidth:"600px",margin:"100px auto",background:"#aacafa"}} >
+    <div className="container mt-5 " >
       <h2>{isSignIn ? 'Sign In' : 'Register'}</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{maxWidth:"600px"}}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Email address</label>
           <input
@@ -104,14 +105,17 @@ useEffect(()=>{
 
         {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
 
-        <button type="submit" className="btn btn-primary">{isSignIn ? 'Sign In' : 'Register'}</button>
+        <button type="submit" className="btn btn-primary "  style={{width:"150px"}}>{isSignIn ? 'Sign In' : 'Register'}</button>
       </form>
       <p className="mt-3">
         {isSignIn ? 'Don\'t have an account? ' : 'Already have an account? '}
-        <button className="btn btn-link" onClick={() => setIsSignIn(!isSignIn)}>
+       
+       
+        <button className="btn btn-link " onClick={() => setIsSignIn(!isSignIn)}>
           {isSignIn ? 'Register' : 'Sign In'}
         </button>
       </p>
+    </div>
     </div>
   );
 };
